@@ -1,20 +1,14 @@
 ﻿<!DOCTYPE html>
-
 <html lang="ru">
 <head>
     <meta charset="utf-8" />
     <title>Объявления</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap" rel="stylesheet">
     <link href="styles/ads-style.css" rel="stylesheet" />
+    <link href="styles/button-back-style.css" rel="stylesheet" />
     <link href="images/itas.ico" rel="icon">
 </head>
 <body>
-    <P ALIGN="right">
-        <br>
-        <small>
-            <A HREF="Studying.html" style="font-size:20px;">Вернуться</A>
-        </small>
-    </P>
     <main class="main-content">
         <h1>Объявления за последнюю неделю:</h1>
         <div class="flex">
@@ -31,6 +25,14 @@
             </div>
         </div>
     </main>
+    <p align="right">
+        <button class="button" onclick="btnback()"><span>Вернуться</span></button>
+    </p>
+    <script>
+        function btnback() {
+            window.open("Studying.html", "_self");
+        }
+    </script>
     <footer>
         <p>
             Минск,

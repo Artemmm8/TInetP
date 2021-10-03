@@ -5,7 +5,8 @@
     <meta charset="utf-8" />
     <title></title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap" rel="stylesheet">
-    <!--<link href="styles/stuff-style.css" rel="stylesheet" />-->
+    <link href="styles/stuff-style.css" rel="stylesheet" />
+    <link href="styles/button-back-style.css" rel="stylesheet" />
     <link href="images/itas.ico" rel="icon">
     <style>
         body {
@@ -43,11 +44,13 @@
         </li>
     </ol>
 
-    <P ALIGN="right">
-        <br>
-        <small>
-            <A HREF="Studying.html" target="_top" style="font-size:20px;">Вернуться</A>
-        </small>
-    </P>
+    <p align="right">
+        <button class="button" onclick="btnback()"><span>Вернуться</span></button>
+    </p>
+    <script>
+        function btnback() {
+            window.open("Studying.html", "_top");
+        }
+    </script>
 </body>
 </html>

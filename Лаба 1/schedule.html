@@ -6,6 +6,7 @@
     <title>Расписание</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap" rel="stylesheet">
     <link href="styles/schedule-style.css" rel="stylesheet" />
+    <link href="styles/button-back-style.css" rel="stylesheet" />
     <link href="images/itas.ico" rel="icon">
 </head>
 <body>
@@ -428,11 +429,16 @@
             </table>
         </div>
     </div>
-    <P ALIGN="right">
-        <br>
-        <small>
-            <A HREF="Studying.html" style="font-size:20px;">Вернуться</A>
-        </small>
-    </P>
+    <p align="right">
+        <button class="button" onclick="btnback()"><span>Вернуться</span></button>
+    </p>
+    <p align="right">
+        <span>Также можно ознакомиться с расписанием <a href="https://iis.bsuir.by/schedule/820602" target="_blank">тут</a></span>
+    </p>
+    <script>
+        function btnback() {
+            window.open("Studying.html", "_self");
+        }
+    </script>
 </body>
 </html>
