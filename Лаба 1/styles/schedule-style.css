@@ -1,0 +1,50 @@
+﻿body {
+    font-family: 'Roboto Slab', serif;
+    font-size: 15px;
+}
+
+.end-time {
+    font-size: 10px;
+    text-align: right;
+    border-bottom: 1px solid #808080;
+}
+
+.right-col {
+    text-align: right;
+    font-size: 10px;
+}
+
+
+.cab {
+    font-size: 10px;
+    border-bottom: 1px solid #808080;
+}
+
+.sub-left-red {
+    border-left: 3px solid #ff0000;
+}
+
+.sub-left-green {
+    border-left: 3px solid #6ce26c;
+}
+
+.week-day {
+    color: white;
+    background-color: #007acc;
+}
+
+.surs-bottom {
+    border-bottom: 1px solid #808080;
+}
+
+.no-bottom-border {
+    border-bottom: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.notmonday {
+    margin-left: 20px;
+}
