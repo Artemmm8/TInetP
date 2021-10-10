@@ -1,0 +1,50 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<link href="../Лаба 1/styles/button-back-style.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto Slab', serif;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <article>
+        <header>
+            <h2>Описание задания</h2>
+        </header>
+        <p>
+            Демонстрация работы методов alert, confirm и prompt:
+			<br>
+			<br>
+			<br>
+			<b>
+				alert("Это alert (предупреждение), метод языка JavaScript, с которым, экспериментирует Петров, заменяя этот текст на приветствие самому себе!")
+				<br>
+				<br>
+				confirm("Это confirm-подтверждение. Сделайте выбор: да/нет")
+				<br>
+				<br>
+				prompt("Как вас зовут? (введите свои данные вместо данных по умолчанию)", "Гончаревич - душнила");
+			</b>
+        </p>
+    </article>
+
+    <p align="right">
+        <button class="button" onclick="task_1_action()"><span>Запустить</span></button>
+    </p>
+    <script>
+        function task_1_action() {
+			alert("Это alert (предупреждение), метод языка JavaScript, с которым, экспериментирует Петров, заменяя этот текст на приветствие самому себе!")
+			confirm("Это confirm-подтверждение. Сделайте выбор: да/нет")
+			prompt("Как вас зовут? (введите свои данные вместо данных по умолчанию)", "Гончаревич - душнила");
+        }
+	</script>
+
+</body>
+
+</html>
