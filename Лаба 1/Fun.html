@@ -2,6 +2,22 @@
 <head>
     <title>Досуг</title>
     <link href="images/itas.ico" rel="icon">
+    <style>
+        .flex {
+            display: flex;
+            border: 2px solid green;
+            width: 1200px;
+        }
+
+        div {
+            margin-right: 50px;
+        }
+
+        #submbtn {
+            margin-top: 50px;
+            margin-left: 600px;
+        }
+    </style>
 </head>
 <body bgcolor="000000" background="images/Fun.jpg"
       bgproperties=fixed text="FFD700" link="4EEE94" vlink="43CD80" alink="54FF9F">
@@ -22,7 +38,7 @@
         </small>
     </p>
     <center>
-        <img src="images/map.png" usemap="#workmap" />
+        <img src="images/map.png" width="630" height="398" usemap="#workmap" />
 
         <map name="workmap">
             <area shape="rect" coords="8, 8, 376, 307" href="crocodile.html" alt="Crocodile" />
@@ -32,10 +48,27 @@
     </center>
     <br>
     <form>
-        <p><b>Какое мероприятие понравилось больше всех?</b></p>
-        <p><input type="radio" name="fun" value="croc">Крокодил</p>
-        <p><input type="radio" name="fun" value="mafia">Мафия</p>
-        <p><input type="radio" name="fun" value="manchkin">Манчкин</p>
+        <div class="flex">
+            <div>
+                <p><b>Какое мероприятие понравилось больше всех?</b></p>
+                <p><input type="radio" name="fun" value="croc">Крокодил</p>
+                <p><input type="radio" name="fun" value="mafia">Мафия</p>
+                <p><input type="radio" name="fun" value="manchkin">Манчкин</p>
+            </div>
+            <div>
+                <p><b>В какие игры вы играли?</b></p>
+                <p><input type="checkbox" value="croc">Крокодил</p>
+                <p><input type="checkbox" value="mafia">Мафия</p>
+                <p><input type="checkbox" value="manchkin">Манчкин</p>
+            </div>
+            <div>
+                <p><b>Что провести на следующей неделе?</b></p>
+                <p><input type="text"></p>
+                <input id="submbtn" type="submit" value="Отправить" />
+            </div>
+        </div>
+        <br />
+        
     </form>
     <br>Студенты Жуковский и Бондарчук&copy2021<hr>
 </body>
