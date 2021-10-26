@@ -1,0 +1,67 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<link href="../Лаба 1/styles/button-back-style.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Roboto Slab', serif;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+	<script>
+		function insert(num) {
+			document.form.textView.value = document.form.textView.value + num;
+		}
+		function equal() {
+			var exp = document.form.textView.value;
+			if (exp) {
+				document.form.textView.value = eval(document.form.textView.value);
+			}
+		}
+		function c() {
+			document.form.textView.value = " ";
+		}
+	</script>
+	<center>
+		<br>
+		<br>
+		<form name="form">
+			<input type="text" name="textView" />
+			<br>
+			<br>
+			<input type="button" value="/" onclick="insert('/')" />
+			<br>
+			<br>
+			<input type="button" value="7" onclick="insert(7)" />
+			<input type="button" value="8" onclick="insert(8)" />
+			<input type="button" value="9" onclick="insert(9)" />
+			<input type="button" value="*" onclick="insert('*')" />
+			<br>
+			<br>
+			<input type="button" value="4" onclick="insert(4)" />
+			<input type="button" value="5" onclick="insert(5)" />
+			<input type="button" value="6" onclick="insert(6)" />
+			<input type="button" value="-" onclick="insert('-')" />
+			<br>
+			<br>
+			<input type="button" value="1" onclick="insert(1)" />
+			<input type="button" value="2" onclick="insert(2)" />
+			<input type="button" value="3" onclick="insert(3)" />
+			<input type="button" value="+" onclick="insert('+')" />
+			<br>
+			<br>
+			<input type="button" value="0" onclick="insert(0)" />
+			<input type="button" value="=" onclick="equal()" />
+			<input type="button" value="C" onclick="c()" />
+			<br>
+		</form>
+	</center>
+
+</body>
+
+</html>

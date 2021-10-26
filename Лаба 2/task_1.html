@@ -11,26 +11,29 @@
     </style>
 </head>
 
-<body>
+<body id="task_1_body">
 
     <article>
         <header>
             <h2>Описание задания</h2>
         </header>
         <p>
-            Демонстрация работы методов alert, confirm и prompt:
-			<br>
-			<br>
-			<br>
-			<b>
-				alert("Это alert (предупреждение), метод языка JavaScript, с которым, экспериментирует Петров, заменяя этот текст на приветствие самому себе!")
-				<br>
-				<br>
-				confirm("Это confirm-подтверждение.")
-				<br>
-				<br>
-				prompt("Как вас зовут? (введите свои данные вместо данных по умолчанию)", "Unknown");
-			</b>
+            Демонстрация работы метода confirm:
+            <br>
+            <br>
+            <br>
+            <b>
+                confirm("Сообщение о подтверждении")
+            </b>
+            <br>
+            <br>
+            Confirm (подтверждение) – предназначен для вывода информации и позволяет пользователю сделать выбор в форме ответа Да/Нет на вопрос
+            <br>
+            <br>
+            Кнопка "Запустить" запускает метод confirm, при положительном ответе стандартный шрифт браузера переключается на Arial или наоборот.
+            <br>
+            <br>
+            Примечание: в некоторых браузерах шрифт Arial может не поддерживаться.
         </p>
     </article>
 
@@ -39,11 +42,16 @@
     </p>
     <script>
         function task_1_action() {
-			alert("Это alert (предупреждение), метод языка JavaScript, с которым, экспериментирует Петров, заменяя этот текст на приветствие самому себе!")
-			confirm("Это confirm-подтверждение.")
-			prompt("Как вас зовут? (введите свои данные вместо данных по умолчанию)", "Unknown");
+            if (confirm('Хотите ли переключить шрифт текста страницы?(Deault/Arial)')) {
+                if (document.getElementById("task_1_body").style.fontFamily != "Arial") {
+                    document.getElementById("task_1_body").style.fontFamily = "Arial";
+                }
+                else {
+                    document.getElementById("task_1_body").style.fontFamily = "Times New Roman";
+                }
+            }
         }
-	</script>
+    </script>
 
 </body>
 
