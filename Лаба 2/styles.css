@@ -1,0 +1,33 @@
+.btn {
+  width: 50px;
+  height: 50px;
+  background: black;
+  color: yellow;
+  font-size: 25px;
+  border: 2px solid green;
+  border-radius: 50%;
+  cursor:pointer;
+  transition-duration: 0.4s;
+}
+
+.btn:hover {
+  background-color: yellow;
+  color: black;
+}
+
+.btn_zero {
+  width: 105px;
+  border-radius: 45%;
+}
+
+.btn_backspace {
+  width: 105px;
+  border-radius: 45%;
+  font-size: 18px;
+}
+
+.input_txt {
+  width: 500px;
+  height: 50px;
+  font-size: 25px;
+}
