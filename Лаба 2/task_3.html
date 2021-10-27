@@ -17,10 +17,34 @@
 	<script>
 		function insert(num) {
 			var exp = document.form.textView.value;
+			var last_symbol = exp[exp.length-1]
 			if (document.form.textView.value == "0" && num != "." && num != "+" && num != "-" && num != "*" && num != "/") {
 				document.form.textView.value = "";
 			}
 			document.form.textView.value = document.form.textView.value + num;
+			if (
+			(last_symbol == "." || last_symbol == "+" || last_symbol == "-" || last_symbol == "*" || last_symbol == "/")
+			&&
+			(num == "." || num == "+" || num == "-" || num == "*" || num == "/")
+			) {
+				document.form.textView.value = exp.substring(0, exp.length-1);
+				document.form.textView.value = document.form.textView.value + num;
+			}
+			if (num == ".") {
+				var step;
+				var flag = 0;
+				for (step = 0; step < exp.length-1; step++) {
+					if (exp[step] == ".") {
+					flag = 1
+					}
+					if (exp[step] == "+" || exp[step] == "-" || exp[step] == "*" || exp[step] == "/") {
+					flag = 0
+					}
+				}
+				if (flag) {
+				document.form.textView.value = exp.substring(0, document.form.textView.value.length-1);
+				}
+			}
 		}
 		function equal() {
 			var exp = document.form.textView.value;
@@ -50,24 +74,29 @@
 			document.form.textView.value = eval(document.form.textView.value) + 1;
 		}
 		function backSpace() {
-			var exp = document.form.textView.value;
-			document.form.textView.value = exp.substring(0, exp.length-1);
+			if (document.form.textView.value.length-1 != 0) {
+				var exp = document.form.textView.value;
+				document.form.textView.value = exp.substring(0, exp.length-1);
+			}
+			else {
+			document.form.textView.value = "0";
+			}
 		}
 	</script>
 	<center>
 		<form name="form">
 			<p id=last_value>0<p>
-			<input class="input_txt" type="text" name="textView" autocomplete="off" value ="0"/>
+			<input class="input_txt" type="text" name="textView" autocomplete="off" value ="0" readonly/>
 			<br>
 			<br>
 			<input class="btn" type="button" value="--" onclick="decrement()" />
 			<input class="btn" type="button" value="++" onclick="increment()" />
-			<input class="btn btn_backspace" type="button" value="Backspace" onclick="backSpace()" />
+			<input class="btn btn_backspace" type="button" value="Backspace" onclick="backSpace()" accesskey="Backspace" />
 			<br>
 			<br>
 			<input class="btn" type="button" value="C" onclick="c()" accesskey="c" />
 			<input class="btn" type="button" value="+/-" onclick="sign()" />
-			<input class="btn" type="button" value="%" onclick="toPercent()" />
+			<input class="btn" type="button" value="%" onclick="toPercent()" accesskey="%" />
 			<input class="btn" type="button" value="/" onclick="insert('/')" accesskey="/" />
 			<br>
 			<br>
