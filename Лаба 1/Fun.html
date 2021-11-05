@@ -14,8 +14,12 @@
         }
 
         #submbtn {
-            margin-top: 50px;
-            margin-left: 600px;
+            margin-top: 130px;
+            margin-left: 350px;
+        }
+
+        .quest {
+            width: 200px;
         }
     </style>
 </head>
@@ -41,27 +45,38 @@
         <img src="images/map.png" width="630" height="398" usemap="#workmap" />
 
         <map name="workmap">
-            <area shape="rect" coords="8, 8, 376, 307" href="crocodile.html" alt="Crocodile" />
-            <area shape="rect" coords="7, 320, 381, 595" href="mafia.html" alt="Mafia" />
-            <area shape="rect" coords="402, 86, 951, 472" href="manchkin.html" alt="Manchkin" />
+            <area shape="rect" coords="8, 8, 245, 199" href="crocodile.html" alt="Crocodile" />
+            <area shape="rect" coords="5, 209, 249, 388" href="mafia.html" alt="Mafia" />
+            <area shape="poly" coords="518, 234, 524, 206, 585, 222, 580, 250, 547, 308" href="https://iis.bsuir.by/" alt="IIS" />
+            <area shape="rect" coords="426, 58, 487, 158" href="crocodile.html" alt="Crocodile" />
+            <area shape="circle" coords="390, 265, 30" href="mafia.html" alt="Mafia" />
+            <area shape="rect" coords="263, 57, 621, 307" href="manchkin.html" alt="Manchkin" />
         </map>
     </center>
     <br>
     <form>
         <div class="flex">
-            <div>
+            <div class="quest">
                 <p><b>Какое мероприятие понравилось больше всех?</b></p>
                 <p><input type="radio" name="fun" value="croc">Крокодил</p>
                 <p><input type="radio" name="fun" value="mafia">Мафия</p>
                 <p><input type="radio" name="fun" value="manchkin">Манчкин</p>
             </div>
-            <div>
+            <div class="quest">
                 <p><b>В какие игры вы играли?</b></p>
                 <p><input type="checkbox" value="croc">Крокодил</p>
                 <p><input type="checkbox" value="mafia">Мафия</p>
                 <p><input type="checkbox" value="manchkin">Манчкин</p>
             </div>
-            <div>
+            <div class="quest">
+                <p><b>В какое время удобнее собираться?</b></p>
+                <p><input type="radio" name="def" value="ev17-18">17:00-18:00</p>
+                <p><input type="radio" name="def" value="ev18-19">18:00-19:00</p>
+                <p><input type="radio" name="def" value="ev19-20">19:00-20:00</p>
+                <p><input type="radio" name="def" value="ev20-21">20:00-21:00</p>
+                <p><input type="radio" name="def" value="ev21-22">21:00-22:00</p>
+            </div>
+            <div class="quest">
                 <p><b>Что провести на следующей неделе?</b></p>
                 <p><input type="text"></p>
                 <input id="submbtn" type="submit" value="Отправить" />

@@ -11,9 +11,48 @@
         }
     </style>
 </head>
-
 <body>
-
+	<center>
+		<form name="form">
+			<p id=last_value>0<p>
+			<input class="input_txt" type="text" name="textView" autocomplete="off" value ="0" readonly/>
+			<br>
+			<br>
+			<input class="btn" type="button" value="--" onclick="decrement()" />
+			<input class="btn" type="button" value="++" onclick="increment()" />
+			<input class="btn btn_backspace" type="button" value="Backspace" onclick="backSpace()" accesskey="Backspace" />
+			<br>
+			<br>
+			<input class="btn" type="button" value="C" onclick="c()" accesskey="c" />
+			<input class="btn" type="button" value="+/-" onclick="sign()" />
+			<input class="btn" type="button" value="%" onclick="toPercent()" accesskey="%" />
+			<input class="btn" type="button" value="/" onclick="insert('/')" accesskey="/" />
+			<br>
+			<br>
+			<input class="btn" type="button" value="7" onclick="insert(7)" accesskey="7" />
+			<input class="btn" type="button" value="8" onclick="insert(8)" accesskey="8" />
+			<input class="btn" type="button" value="9" onclick="insert(9)" accesskey="9" />
+			<input class="btn" type="button" value="*" onclick="insert('*')" accesskey="*" />
+			<br>
+			<br>
+			<input class="btn" type="button" value="4" onclick="insert(4)" accesskey="4" />
+			<input class="btn" type="button" value="5" onclick="insert(5)" accesskey="5" />
+			<input class="btn" type="button" value="6" onclick="insert(6)"accesskey="6"  />
+			<input class="btn" type="button" value="-" onclick="insert('-')" accesskey="-" />
+			<br>
+			<br>
+			<input class="btn" type="button" value="1" onclick="insert(1)" accesskey="1" />
+			<input class="btn" type="button" value="2" onclick="insert(2)" accesskey="2" />
+			<input class="btn" type="button" value="3" onclick="insert(3)" accesskey="3" />
+			<input class="btn" type="button" value="+" onclick="insert('+')" accesskey="+" />
+			<br>
+			<br>
+			<input class="btn btn_zero" type="button" value="0" onclick="insert(0)" accesskey="0" />
+			<input class="btn" type="button" value="." onclick="insert('.')" accesskey="." />
+			<input class="btn" type="button" value="=" onclick="equal()" accesskey="=" />
+			<br>
+		</form>
+	</center>
 	<script>
 		function insert(num) {
 			var exp = document.form.textView.value;
@@ -83,48 +122,5 @@
 			}
 		}
 	</script>
-	<center>
-		<form name="form">
-			<p id=last_value>0<p>
-			<input class="input_txt" type="text" name="textView" autocomplete="off" value ="0" readonly/>
-			<br>
-			<br>
-			<input class="btn" type="button" value="--" onclick="decrement()" />
-			<input class="btn" type="button" value="++" onclick="increment()" />
-			<input class="btn btn_backspace" type="button" value="Backspace" onclick="backSpace()" accesskey="Backspace" />
-			<br>
-			<br>
-			<input class="btn" type="button" value="C" onclick="c()" accesskey="c" />
-			<input class="btn" type="button" value="+/-" onclick="sign()" />
-			<input class="btn" type="button" value="%" onclick="toPercent()" accesskey="%" />
-			<input class="btn" type="button" value="/" onclick="insert('/')" accesskey="/" />
-			<br>
-			<br>
-			<input class="btn" type="button" value="7" onclick="insert(7)" accesskey="7" />
-			<input class="btn" type="button" value="8" onclick="insert(8)" accesskey="8" />
-			<input class="btn" type="button" value="9" onclick="insert(9)" accesskey="9" />
-			<input class="btn" type="button" value="*" onclick="insert('*')" accesskey="*" />
-			<br>
-			<br>
-			<input class="btn" type="button" value="4" onclick="insert(4)" accesskey="4" />
-			<input class="btn" type="button" value="5" onclick="insert(5)" accesskey="5" />
-			<input class="btn" type="button" value="6" onclick="insert(6)"accesskey="6"  />
-			<input class="btn" type="button" value="-" onclick="insert('-')" accesskey="-" />
-			<br>
-			<br>
-			<input class="btn" type="button" value="1" onclick="insert(1)" accesskey="1" />
-			<input class="btn" type="button" value="2" onclick="insert(2)" accesskey="2" />
-			<input class="btn" type="button" value="3" onclick="insert(3)" accesskey="3" />
-			<input class="btn" type="button" value="+" onclick="insert('+')" accesskey="+" />
-			<br>
-			<br>
-			<input class="btn btn_zero" type="button" value="0" onclick="insert(0)" accesskey="0" />
-			<input class="btn" type="button" value="." onclick="insert('.')" accesskey="." />
-			<input class="btn" type="button" value="=" onclick="equal()" accesskey="=" />
-			<br>
-		</form>
-	</center>
-
 </body>
-
 </html>

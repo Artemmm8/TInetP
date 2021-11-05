@@ -24,29 +24,11 @@ var row1 = document.createElement("tr");
 var heading1 = document.createElement("th");
 heading1.innerHTML = "Русское слово";
 
-
-
 row1.appendChild(heading1);
 thead1.appendChild(row1);
 table1.appendChild(thead1);
 
-
-
-switch (navigator.language) {
-    case "ru":
-        fillWords(rusWords, tbody1);
-        break;
-    case "en-US":
-        fillWords(engWords, tbody1);
-        break;
-    case "fr":
-        fillWords(frWords, tbody1);
-        break;
-    default:
-        break;
-}
-
-
+fillWords(rusWords, tbody1);
 
 table1.appendChild(tbody1);
 
@@ -104,9 +86,6 @@ function drawTranslationTable() {
             break;
         case "rus":
             fillWords(rusWords, tbody2);
-            break;
-
-        default:
             break;
     }
     
