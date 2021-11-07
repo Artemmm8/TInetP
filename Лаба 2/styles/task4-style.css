@@ -1,6 +1,7 @@
 body {
-    font-family: 'Roboto Slab', serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
+    background-color:white
 }
 
 table{
@@ -9,7 +10,7 @@ table{
 }
 th, td{
     padding: 10px 20px;
-    border: 1px solid #000;
+    border: 1px solid black;
 }
 div {
     display: flex;

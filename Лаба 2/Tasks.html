@@ -4,34 +4,44 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap" rel="stylesheet">
     <link href="styles/button-back-style.css" rel="stylesheet" />
     <style>
         body {
-            font-family: 'Roboto Slab', serif;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 18px;
         }
 
         li {
             margin-bottom: 20px;
         }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:focus {
+            color: black;
+        }
+
+        a:hover {
+            color: brown;
+        }
+
+        body {
+            
+            background-color:white;
+        }
     </style>
 </head>
-<body bgcolor="#e4eef8">
-    <ol>
-        <li>
-            <a href="task_1.html" target="empty_task">Метод confirm(смена шрифта)</a>
-        </li>
-        <li>
-            <a href="task_2.html" target="empty_task">Метод prompt и alert</a>
-        </li>
-        <li>
-            <a href="task_3.html" target="empty_task">Калькулятор</a>
-        </li>
-        <li>
-            <a href="task_4.html" target="empty_task">Динамическая страница</a>
-        </li>
-    </ol>
+<body>
+    <p>
+        <a href="task_1.html" target="empty_task">Метод confirm(смена шрифта)</a>
+    </p>
+    <p>
+        <a href="task_2.html" target="empty_task">Методы prompt и alert</a>
+    </p>
+    <p><a href="task_3.html" target="empty_task">Калькулятор</a></p>
+    <p><a href="task_4.html" target="empty_task">Динамическая страница</a></p>
 
     <p align="right">
         <button class="button" onclick="btnback()"><span>Вернуться</span></button>
