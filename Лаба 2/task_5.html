@@ -1,0 +1,44 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<link href="styles/button-back-style.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18px;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <article>
+        <header>
+            <h2>Описание задания</h2>
+        </header>
+        <p>
+            Использование массива, содержащего названия месяцев года:
+			<br>
+			<br>
+        </p>
+    </article>
+
+    <p align="right">
+        <button class="button" onclick="task_3_1_action()"><span>Запустить</span></button>
+    </p>
+    <script>
+        function task_3_1_action() {
+			var months_of_year = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+			alert(months_of_year);
+			alert("Winter: " + months_of_year[11] + " " + months_of_year[0] + " " + months_of_year[1] + "\n" +
+			"Spring: " + months_of_year[2] + " " + months_of_year[3] + " " + months_of_year[4] + "\n" +
+			"Summer: " + months_of_year[5] + " " + months_of_year[6] + " " + months_of_year[7] + "\n" +
+			"Autumn: " + months_of_year[8] + " " + months_of_year[9] + " " + months_of_year[10]);
+        }
+	</script>
+
+</body>
+
+</html> 

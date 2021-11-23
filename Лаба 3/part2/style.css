@@ -1,0 +1,40 @@
+main {
+    display: flex;
+    padding: 50px 0px;
+    height: 75vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: var(--white-color);
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.actions button {
+    color: white;
+    height: 50px;
+    border: none;
+    font-size: 21px;
+    margin-top: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: lightblue;
+}
+
+.actions button:hover {
+    background-color: lightgreen;
+}
+
+.homePageLink {
+    margin-top: 100px;
+}
