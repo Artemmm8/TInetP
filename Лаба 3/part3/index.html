@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Объекты, методы, свойства JavaScript</title>
+</head>
+
+<body>
+    <header class="header">
+        <nav>
+            <a href="../LoopsAndConditions/index.html">Циклы и Условия</a>
+            <a href="../FunctionsAndEvents/index.html">Функции и События</a>
+            <a href="../ObjectsMethodsAndProps/index.html">Объекты, методы и
+                свойства JavaScript</a>
+            <a href="../DHTML/index.html">DHTML</a>
+            <a href="../BallsAnimation/index.html">Анимация шаров в коробке</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="actions">
+            <button class="button_task_3_3_1">Задание 3.3.1</button>
+            <button class="button_task_3_3_2">Задание 3.3.2</button>
+        </section>
+
+        <section class="form-task_3_3_3">
+            <h2>Вычисление среднемесячного дохода</h2>
+            <p>Введите начисленные Вам суммы за месяцы:
+            <form name="form1">
+                январь: <input type="text" size=8 name="m1">
+                февраль: <input type="text" size=8 name="m2">
+                март: <input type="text" size=8 name="m3">
+                апрель: <input type="text" size=8 name="m4">
+                май: <input type="text" size=8 name="m5">
+                июнь: <input type="text" size=8 name="m6">
+                <br><br>
+                Средняя зарплата за шесть месяцев:
+                <input type="text" size=22 name="result"><br><br>
+                <input type="button" value="Вычислить" class="calculateIncomeButton">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="reset" value="Обновить">
+            </form>
+        </section>
+
+        <section class="form-task_3_4_1">
+            <h2>Вычисление площадей некоторых фигур</h2>
+
+            <table border=5>
+                <form name="form2">
+                    <tr>
+                        <td>Выберите фигуру:
+                            <select name="list1" size=1>
+                                <option value=0>круг</option>
+                                <option value=1>квадрат</option>
+                                <option value=2>треугольник (прямоугольный, равнобедренный)</option>
+                                <option value=3>треугольник (равносторонний)</option>
+                            </select>
+                            Введите параметр (радиус, сторону, высоту):
+                            <input type="text" size=5 name="num">
+                            <select name="list2" size=1>
+                                <option value="метр(ов)">метр(ов)</option>
+                                <option value="миллиметр(ов)">миллиметр(ов))</option>
+                                <option value="сантиметр(ов)">сантиметр(ов)</option>
+                                <option value="дюйм(ов)">дюйм(ов)</option>
+                            </select>
+                            <br>
+                            <input type="button" value="Вычислить" class="calculateSquareButton"><br><br><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Фигура: <input type="text" name="fig" size=50>&nbsp;&nbsp;&nbsp;
+                            Площадь: <input type="text" name="res" size=50> квадратных<br>
+                            <input type="reset" value="Обновить">
+                        </td>
+                    </tr>
+                </form>
+            </table>
+        </section>
+
+        <section class="form-task_3_4_2">
+            <h2>Вычисление минимального и максимального дохода</h2>
+            <p>Введите начисленные Вам суммы за месяцы:
+            <form name="form3">
+                <div class="inputs">
+                    январь: <input type="text" size=8 name="m1">
+                    февраль: <input type="text" size=8 name="m2">
+                    март: <input type="text" size=8 name="m3">
+                    апрель: <input type="text" size=8 name="m4">
+                    май: <input type="text" size=8 name="m5">
+                    июнь: <input type="text" size=8 name="m6">
+                    июль: <input type="text" size=8 name="m7">
+                    август: <input type="text" size=8 name="m8">
+                    сентябрь: <input type="text" size=8 name="m9">
+                    октябрь: <input type="text" size=8 name="m10">
+                    ноябрь: <input type="text" size=8 name="m11">
+                    декабрь: <input type="text" size=8 name="m12">
+                </div>
+                <br><br>
+                минимальная зарплата за 12 месяцев:
+                <input type="text" size=50 name="min-result"><br><br>
+                максимальная зарплата за 12 месяцев:
+                <input type="text" size=50 name="max-result"><br><br>
+                <input type="button" value="Вычислить" class="calculateMinAndMaxIncomeButton">&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="reset" value="Обновить">
+            </form>
+        </section>
+    </main>
+</body>
+
+<footer>
+    <a href="../../../index.html" class="home-page-link">Домашнаяя страница<a>
+</footer>
+<script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+h1 {
+    font: var(--medium-font);
+    color: var(--black-color);
+    font-size: 27px;
+    line-height: 31px;
+}
+
+h2 {
+    font: var(--medium-font);
+    color: var(--black-color);
+    font-size: 21px;
+    line-height: 34px;
+    margin-bottom: 20px;
+}
+
+form, input, button, p, td {
+    font: var(--regular-font);
+    color: var(--black-color);
+    font-size: 16px;
+    line-height: 18px;
+}
+
+select {
+    width: 100px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+input, select {
+    margin-bottom: 10px;
+}
+
+body {
+    background-color: var(--white-color);
+}
+
+main {
+    display: flex;
+    padding: 50px 0px;
+    min-height: 75vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: var(--white-color);
+}
+
+header nav {
+    justify-content: center;
+}
+
+header nav {
+    justify-content: center;
+}
+
+header nav a {
+    margin: 0px 50px;
+    justify-content: center;
+}
+
+section {
+    margin-bottom: 150px;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.actions button {
+    font: var(--regular-font);
+    color: var(--white-color);
+    width: 200px;
+    height: 50px;
+    border: none;
+    font-size: 21px;
+    margin-top: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: var(--blue-color);
+}
+
+.actions button:hover {
+    background-color: var(--deep-blue-color);
+}
+
+.inputs {
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+}
