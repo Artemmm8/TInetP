@@ -8,16 +8,9 @@ main {
     background-color: var(--white-color);
 }
 
-.actions {
-    display: flex;
-    flex-wrap: wrap; 
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.actions button {
-    color: white;
+button {
+    position: absolute;
+    color: yellow;
     height: 50px;
     border: none;
     font-size: 21px;
@@ -26,13 +19,51 @@ main {
     margin-right: 60px;
     padding-left: 20px;
     padding-right: 20px;
-    border-radius: 5px;
+    border-radius: 25px;
     margin-bottom: 10px;
-    background-color: lightblue;
+    background-color: #808000;
 }
 
-.actions button:hover {
-    background-color: lightgreen;
+button:hover {
+    color: black;
+    background-color: yellow;
+}
+
+.container_top {
+  position: relative;
+}
+
+.container_top .convertCelsFahButton {
+  top: 30%;
+  left: 22%;
+}
+
+.container_top .convertFahCelsButton {
+  top: 50%;
+  left: 30%;
+}
+
+.container_top .convertRumCelsButton {
+  top: 30%;
+  left: 65%;
+}
+
+.container_top .convertCelsRumButton {
+  top: 50%;
+  left: 55%;
+}
+
+.container_bottom .convertFahRumButton {
+  top: 63%;
+  left: 43%;
+}
+
+.container_bottom .convertRumFahButton {
+  top: 25%;
+  left: 43%;
+}
+.container_bottom {
+  position: relative;
 }
 
 .homePageLink {
