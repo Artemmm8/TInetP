@@ -11,13 +11,63 @@
     font-size: 28px;
 	text-align: left;
     margin-top: 10px;
-    margin-left: 50px; 
-    margin-right: 50px;
+    margin-left: 10px; 
+    margin-right: 10px;
     margin-bottom: 10px;
     border-radius: 20px;
     background-color: green;
 }
+
 .actions button:hover { 
     background-color: yellow;
 	color: black;
+}
+
+.actions .button_task_3_1_1 {
+    margin-right: 1400px; 
+}
+
+.actions .button_task_3_1_2 {
+    margin-left: 110px;
+    margin-right: 1300px; 
+}
+
+.actions .button_task_3_1_3 {
+    margin-left: 210px; 
+    margin-right: 1200px; 
+}
+
+.actions .button_task_3_1_4 {
+    margin-left: 310px; 
+    margin-right: 1100px; 
+}
+
+.actions .button_task_3_1_5 {
+    margin-left: 410px; 
+    margin-right: 1000px; 
+}
+
+.actions .button_task_3_1_6 {
+    margin-left: 510px; 
+    margin-right: 900px; 
+}
+
+.actions .button_task_3_1_7 {
+    margin-left: 610px; 
+    margin-right: 800px; 
+}
+
+.actions .button_task_3_1_8 {
+    margin-left: 710px; 
+    margin-right: 700px; 
+}
+
+.actions .button_task_3_1_9 {
+    margin-left: 810px; 
+    margin-right: 600px; 
+}
+
+.actions .button_task_3_1_10 {
+    margin-left: 910px; 
+    margin-right: 500px; 
 }
