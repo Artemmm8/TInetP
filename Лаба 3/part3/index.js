@@ -49,7 +49,7 @@ function handleTask_3_3_1() {
       s = a * a / 4 * Math.sqrt(3);
     }
   
-    d.forms.form2.res.value = `${s} ${d.forms.form2.elements.list2.value}`;
+    d.forms.form2.res.value = `${s} ${d.forms.form2.elements.list2.value}` + "^2";
     d.forms.form2.fig.value = r;
   }
   

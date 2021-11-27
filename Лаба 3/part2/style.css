@@ -1,6 +1,5 @@
 main {
     display: flex;
-    padding: 50px 0px;
     height: 75vh;
     align-items: center;
     flex-direction: column;
@@ -8,19 +7,42 @@ main {
     background-color: var(--white-color);
 }
 
+.title {
+    font-size: 48px;
+	color: white;
+	text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
+
+header {
+	background-color: #20B2AA;
+}
+
+header nav {
+	justify-content: center;
+}
+
+header nav a {
+    margin: 0px 50px;
+    justify-content: center;
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+	text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
+
 button {
     position: absolute;
     color: yellow;
-    height: 50px;
+    height: 30px;
     border: none;
-    font-size: 21px;
+    font-size: 14px;
     margin-top: 10px;
     margin-left: 60px;
     margin-right: 60px;
+    margin-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 25px;
-    margin-bottom: 10px;
     background-color: #808000;
 }
 
@@ -34,38 +56,43 @@ button:hover {
 }
 
 .container_top .convertCelsFahButton {
-  top: 30%;
-  left: 22%;
+  top: 28%;
+  left: 15%;
 }
 
 .container_top .convertFahCelsButton {
-  top: 50%;
-  left: 30%;
+  top: 45%;
+  left: 24%;
 }
 
 .container_top .convertRumCelsButton {
-  top: 30%;
-  left: 65%;
+  top: 28%;
+  left: 59%;
 }
 
 .container_top .convertCelsRumButton {
-  top: 50%;
-  left: 55%;
+  top: 45%;
+  left: 48%;
 }
 
 .container_bottom .convertFahRumButton {
-  top: 63%;
-  left: 43%;
+  top: 58%;
+  left: 37%;
 }
 
 .container_bottom .convertRumFahButton {
-  top: 25%;
-  left: 43%;
+  top: 21%;
+  left: 37%;
 }
 .container_bottom {
   position: relative;
 }
 
 .homePageLink {
-    margin-top: 100px;
+    margin-top: 20px;
+	background-color: #20B2AA;
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+	text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
 }
