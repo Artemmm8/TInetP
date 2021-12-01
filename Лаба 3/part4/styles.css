@@ -1,0 +1,146 @@
+h1 {
+    color: yellow;
+    font-size: 36px;
+    line-height: 31px;
+	text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
+
+h2 {
+    color: white;
+    font-size: 21px;
+    line-height: 34px;
+    margin-bottom: 20px;
+	text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
+
+table {
+	margin: 30px;
+}
+
+form, input, button, p, td {
+    color: black;
+    font-size: 20px;
+    line-height: 18px;
+}
+
+select {
+    width: 100px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+input, select {
+    margin-bottom: 10px;
+}
+
+body {
+    background-color: white;
+}
+
+main {
+    display: flex;
+    padding: 50px 0px;
+    min-height: 75vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #AFEEEE;
+}
+
+header {
+	background-color: #20B2AA;
+}
+
+header nav {
+	justify-content: center;
+}
+
+header nav a {
+    margin: 0px 50px;
+    justify-content: center;
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+	text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
+
+section {
+    margin-bottom: 150px;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.actions a {
+	text-decoration: none;
+    color: white;
+    height: 50px;
+    border: none;
+    display: flex;
+    font-size: 21px;
+    margin-top: 10px;
+    margin-left: 60px;
+    align-items: center;
+    margin-right: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #20B2AA;
+	text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
+
+.actions a:hover {
+    background-color: orange;
+}
+
+#l1 {
+    top:5px;
+    left:24px; 
+    width:178px; 
+    height:176px; 
+    position:absolute; 
+    background: var(--blue-color); 
+} 
+
+td {
+    position: relative;
+}
+
+input {
+    color: white;
+    width: 200px;
+    height: 50px;
+    border: none;
+    font-size: 21px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #20B2AA;
+	text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
+
+input:hover {
+    background-color: orange;
+}
+
+.mycenter {
+    top: 80px;
+    left: 80px;
+    position: absolute;
+}
+
+.myimage {
+    top: 130px;
+    left: 80px;
+    position: absolute;
+}

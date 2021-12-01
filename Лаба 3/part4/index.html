@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Использование DHTML</title>
+    <script type="text/javascript" src="./index.js"></script>
+</head>
+
+<body onload="initLine()">
+	<header class="header">
+		<center>
+			<nav>
+				<a href="../part1/index.html">Задания 3.1</a>
+				<a href="../part2/index.html">Задания 3.2</a>
+				<a href="../part3/index.html">Задания 3.3</a>
+				<a href="index.html">DHTML</a>
+				<a href="">Анимация</a>
+			</nav>
+		</center>
+	</header>
+
+    <main>
+        <h1>Пример использования слоёв: движение изображения с вращающимся спутником</h1>
+        <form name="form1">
+            <input type="button" value="Ускорить спутник" onClick="initCircle()">
+            <input type="button" value="Ускорить вправо" onClick="initLine(); succLine()">
+            <input type="button" value="Вправо" onClick="initLine()">
+            <input type="button" value="Тормоз спутника" onClick="stopCircle()">
+            <input type="button" value="Стоп вправо" onClick="stopLine()">
+        </form>
+        <table width=1000 height=200 border=4 bgcolor="black" bordercolor="black">
+            <tr>
+                <td>
+                    <div id="l1">
+                        <img src="./assets/Canvas_earth.png" name="mycenter" class="mycenter">
+                        <img src="./assets/Canvas_moon.png" name="myimage" class="myimage">
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <section class="actions">
+            <a class="button_task_3_6_1" href="./tasks/task_3_6_1.html" target="_blank">Задание 3.6.1</a>
+            <a class="button_task_4_6_3" href="./tasks/task_4_6_3.html" target="_blank">Задание 4.6.3</a>
+            <a class="button_task_4_6_3" href="./tasks/task_4_6_4.html" target="_blank">Задание 4.6.4</a>
+        </section>
+    </main>
+	
+</body>
+
+</html>
