@@ -1,68 +1,69 @@
-//  сдвиг слоя на вычисленный шаг вправо
-let timerCircle = 10;
-let timerLine = 10;
-//  начальные установки для движения по окружности
-let angle = 0;
-const radius = 50;
-const xbegin = 80;
-const ybegin = 80;
-const d = document;
+$(function () {
+	$('[data-action="rotate"]').each(function () {
+		var $item = $(this),
+			$inner = $('<div class="inner">').appendTo($item),
+			$dot = $('<div class="dot">').appendTo($item),
+			dims = {
+				W: this.clientWidth,
+				H: this.clientHeight
+			},
+			center = {
+				X: dims.W / 2,
+				Y: dims.H / 2
+			},
+			ratio = dims.W / dims.H,
+			rotate = $item.data('rotate'),
+			angle = 0,
+			start = 0,
+			time = [20, 5],
+			interval = time[0],
+			process;
 
-let p1; // текущая координата слоя
-let sp1; // приращение при движении слоя
-let Circle = false;
-let Line = false;
+		$inner
+			.on('mouseenter', function () {
+				interval = time[1];
+			})
+			.on('mouseleave', function () {
+				interval = time[0];
+			});
+		$item
+			.on('mousedown', function () {
+				clearTimeout(process);
+			})
+			.on('mouseup', function () {
+				animation();
+			});
 
-/// //////////
-function stoppedCircle() {
-  clearInterval(timerCircle);
-}
-function stoppedLine() {
-  clearTimeout(timerLine);
-}
-function stopCircle() {
-  Circle = true;
-}
+		if (rotate) {
+			rotate = rotate.split('*');
 
-function stopLine() {
-  Line = true;
-}
-/// ///////////
+			if (rotate[1] !== undefined) {
+				angle = Math.PI * parseInt(rotate[0]) / 180;
+				$inner.css({
+					transform: 'rotateZ(' + rotate[0] + ')'
+				});
+			} else {
+				$item.css({
+					transform: 'rotateZ(' + rotate[0] + ')'
+				});
+			}
+		}
 
-// установка начальных параметров перемещения слоя
-function initLine() {
-  const l1 = document.getElementById('l1');
-  Line = false;
-  p1 = 24;
-  sp1 = 1;
-  l1.style.left = '24px';
-}
+		animation();
 
-//   движение изображения-спутника по окружности
-function moveImage() {
-  const
-    rad = angle * Math.PI / 180;
-    //  вычисление координаты следующего положения изображения
-  d.myimage.style.left = `${xbegin + radius * Math.sin(rad)}px`;
-  d.myimage.style.top = `${ybegin + radius * Math.cos(rad)}px`;
-  angle += 1;
-  if (angle >= 360) angle = 0;
-  if (Circle === true) stoppedCircle();
-}
+		function animation() {
+			var x = center.X * Math.sin(start),
+				y = center.Y * Math.cos(start),
+				X = x * Math.cos(angle) - y * Math.sin(angle),
+				Y = x * Math.sin(angle) + y * Math.cos(angle);
 
-function succLine() {
-  const l1 = document.getElementById('l1');
-  sp1 = 1;
-  p1 += sp1;
-  if (p1 > 700) p1 = 24;
-  l1.style.left = `${p1}px`;
-  clearTimeout(timerLine);
-  timerLine = setTimeout(succLine, 200);
-  if (Line == true) stoppedLine();
-}
+			$dot.css({
+				top: center.Y + Y,
+				left: center.X + X
+			});
+			start += .02;
 
-function initCircle() {
-  Circle = false;
-  clearInterval(timerCircle);
-  timerCircle = setInterval(moveImage, 10);
-}
+			process = setTimeout(animation, interval);
+		}
+	});
+});
