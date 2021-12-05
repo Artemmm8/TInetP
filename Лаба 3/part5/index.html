@@ -7,10 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
     <title>Собственная анимация</title>
-    <script type="text/javascript" src="./index.js"></script>
 </head>
 
-<body onload="initLine()">
+<body>
 	<header class="header">
 		<center>
 			<nav>
@@ -23,16 +22,22 @@
 		</center>
 	</header>
 
-    <main>
-        <h1>Собственная анимация</h1>
-		<div class="orbit">
-		  <div class="prot"></div>
-		  <div class="elec sp1"></div>
-		</div>
-		<div class="orbit rot45"><div class="elec sp2"></div></div>
-		<div class="orbit rot90"><div class="elec sp3"></div></div>
-		<div class="orbit rot135"><div class="elec sp4"></div></div>
-	
-</body>
+	<h1>Собственная анимация</h1>
+	<div class="orbit">
+		<div class="prot"></div>
+		<div id="sp1" class="elec sp1"></div>
+	</div>
+	<div class="orbit rot45">
+		<div class="elec sp2"></div>
+	</div>
+	<div class="orbit rot90">
+		<div class="elec sp3"></div>
+	</div>
+	<div class="orbit rot135">
+		<div class="elec sp4"></div>
+	</div>
+	<script type="text/javascript" src="index.js"></script>
+	<script language="JavaScript"  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
 
+</body>
 </html>

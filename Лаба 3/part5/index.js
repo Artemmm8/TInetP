@@ -1,68 +1,45 @@
-//  сдвиг слоя на вычисленный шаг вправо
-let timerCircle = 10;
-let timerLine = 10;
-//  начальные установки для движения по окружности
-let angle = 0;
-const radius = 50;
-const xbegin = 80;
-const ybegin = 80;
-const d = document;
-
-let p1; // текущая координата слоя
-let sp1; // приращение при движении слоя
-let Circle = false;
-let Line = false;
-
-/// //////////
-function stoppedCircle() {
-  clearInterval(timerCircle);
-}
-function stoppedLine() {
-  clearTimeout(timerLine);
-}
-function stopCircle() {
-  Circle = true;
+function getPositionAtCenter(element) {
+  let {top, left, width, height} = element.getBoundingClientRect();
+  return {
+    x: left + width / 2,
+    y: top + height / 2
+  };
 }
 
-function stopLine() {
-  Line = true;
-}
-/// ///////////
+function getDistanceBetweenElements(a, b) {
+ let aPosition = getPositionAtCenter(a);
+ let bPosition = getPositionAtCenter(b);
 
-// установка начальных параметров перемещения слоя
-function initLine() {
-  const l1 = document.getElementById('l1');
-  Line = false;
-  p1 = 24;
-  sp1 = 1;
-  l1.style.left = '24px';
+ return Math.hypot(aPosition.x - bPosition.x, aPosition.y - bPosition.y);  
 }
 
-//   движение изображения-спутника по окружности
-function moveImage() {
-  const
-    rad = angle * Math.PI / 180;
-    //  вычисление координаты следующего положения изображения
-  d.myimage.style.left = `${xbegin + radius * Math.sin(rad)}px`;
-  d.myimage.style.top = `${ybegin + radius * Math.cos(rad)}px`;
-  angle += 1;
-  if (angle >= 360) angle = 0;
-  if (Circle === true) stoppedCircle();
+
+function action() {
+  let distance_elec1 = getDistanceBetweenElements(
+    document.getElementsByClassName("prot")[0],
+    document.getElementsByClassName("sp1")[0]
+  );
+
+  let distance_elec2 = getDistanceBetweenElements(
+    document.getElementsByClassName("prot")[0],
+    document.getElementsByClassName("sp2")[0]
+  );
+
+  let distance_elec3 = getDistanceBetweenElements(
+    document.getElementsByClassName("prot")[0],
+    document.getElementsByClassName("sp3")[0]
+  );
+
+  let distance_elec4 = getDistanceBetweenElements(
+    document.getElementsByClassName("prot")[0],
+    document.getElementsByClassName("sp4")[0]
+  );
+
+  console.log(distance_elec1, distance_elec2, distance_elec3, distance_elec4)
+
+  // let elec1 = document.getElementsByClassName("sp1")[0];
+
+  // elec1.style.animationDuration = "1s";
 }
 
-function succLine() {
-  const l1 = document.getElementById('l1');
-  sp1 = 1;
-  p1 += sp1;
-  if (p1 > 700) p1 = 24;
-  l1.style.left = `${p1}px`;
-  clearTimeout(timerLine);
-  timerLine = setTimeout(succLine, 200);
-  if (Line == true) stoppedLine();
-}
-
-function initCircle() {
-  Circle = false;
-  clearInterval(timerCircle);
-  timerCircle = setInterval(moveImage, 10);
-}
+setInterval(action, 1000);
