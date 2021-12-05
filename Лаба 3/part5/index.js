@@ -13,6 +13,10 @@ function getDistanceBetweenElements(a, b) {
  return Math.hypot(aPosition.x - bPosition.x, aPosition.y - bPosition.y);  
 }
 
+const max_distance = getDistanceBetweenElements(
+    document.getElementsByClassName("prot")[0],
+    document.getElementsByClassName("sp1")[0]
+  );
 
 function action() {
   let distance_elec1 = getDistanceBetweenElements(
@@ -35,11 +39,11 @@ function action() {
     document.getElementsByClassName("sp4")[0]
   );
 
-  console.log(distance_elec1, distance_elec2, distance_elec3, distance_elec4)
-
-  // let elec1 = document.getElementsByClassName("sp1")[0];
-
-  // elec1.style.animationDuration = "1s";
+  console.log(distance_elec1)
+ 
+  let new_value = `${100 * (distance_elec1 / max_distance)}s`
+  
+  document.getElementsByClassName("sp1")[0].style.animationDuration = new_value
 }
 
 setInterval(action, 1000);
