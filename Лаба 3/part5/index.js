@@ -13,7 +13,7 @@ function getDistanceBetweenElements(a, b) {
  return Math.hypot(aPosition.x - bPosition.x, aPosition.y - bPosition.y);  
 }
 
-const max_distance = getDistanceBetweenElements(
+const min_distance = getDistanceBetweenElements(
     document.getElementsByClassName("prot")[0],
     document.getElementsByClassName("sp1")[0]
   );
@@ -41,9 +41,15 @@ function action() {
 
   console.log(distance_elec1)
  
-  let new_value = `${100 * (distance_elec1 / max_distance)}s`
-  
-  document.getElementsByClassName("sp1")[0].style.animationDuration = new_value
+  let new_value1 = `${10 * (min_distance / distance_elec1)}s`
+  let new_value2 = `${10 * (min_distance / distance_elec2)}s`
+  let new_value3 = `${10 * (min_distance / distance_elec3)}s`
+  let new_value4 = `${10 * (min_distance / distance_elec4)}s`
+ 
+  document.getElementsByClassName("sp1")[0].style.animationDuration = new_value1
+  document.getElementsByClassName("sp2")[0].style.animationDuration = new_value2
+  document.getElementsByClassName("sp3")[0].style.animationDuration = new_value3
+  document.getElementsByClassName("sp4")[0].style.animationDuration = new_value4
 }
 
 setInterval(action, 1000);
