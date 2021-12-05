@@ -1,3 +1,18 @@
+let data = [
+    {
+        lang: "eng",
+        words: ["star", "money", "morning", "friend", "breakfast", "well", "love", "thanks", "hello", "life"]
+    },
+    {
+        lang: "bel",
+        words: ["зорка", "грошы", "раніца", "сябар", "сняданак", "добра", "каханне", "дзякуй", "прывітанне", "жыццё"]
+    },
+    {
+        lang: "fr",
+        words: ["étoile", "argent", "matin", "ami", "petit déjeuner", "bien", "amour", "merci", "bonjour", "vie"]
+    }
+]
+
 var engWords =
     ["star", "money", "morning", "friend", "breakfast", "well", "love", "thanks", "hello", "life"];
 
@@ -66,7 +81,7 @@ function drawTranslationTable() {
     thead2.appendChild(row2);
     table2.appendChild(thead2);
 
-    var lang;
+    let lang;
     var options = document.getElementsByName("dynamic");
     for (var index = 0; index < options.length; index++) {
         if (options[index].checked) {
@@ -74,20 +89,15 @@ function drawTranslationTable() {
         }
     }
 
-    switch (lang) {
-        case "bel":
-            fillWords(belWords, tbody2);
-            break;
-        case "eng":
-            fillWords(engWords, tbody2);
-            break;
-        case "fr":
-            fillWords(frWords, tbody2);
-            break;
-        case "rus":
-            fillWords(rusWords, tbody2);
-            break;
+    let wordsLocal = [];
+
+    for (const item of data) {
+        if (item.lang == lang) {
+            wordsLocal.push(...item.words)
+        }
     }
+
+    fillWords(wordsLocal, tbody2);
     
     table2.appendChild(tbody2);
     div.appendChild(table2);
