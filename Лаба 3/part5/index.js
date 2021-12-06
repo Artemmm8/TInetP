@@ -13,11 +13,6 @@ function getDistanceBetweenElements(a, b) {
  return Math.hypot(aPosition.x - bPosition.x, aPosition.y - bPosition.y);  
 }
 
-const min_distance = getDistanceBetweenElements(
-    document.getElementsByClassName("prot")[0],
-    document.getElementsByClassName("sp1")[0]
-  );
-
 function action() {
   let distance_elec1 = getDistanceBetweenElements(
     document.getElementsByClassName("prot")[0],
@@ -38,18 +33,19 @@ function action() {
     document.getElementsByClassName("prot")[0],
     document.getElementsByClassName("sp4")[0]
   );
+ 
+  document.getElementsByClassName("sp2")[0].style.backgroundColor = `rgba(${130 / distance_elec2 * 60}, 34, 0)`;
+  document.getElementsByClassName("sp3")[0].style.backgroundColor = `rgba(${130 / distance_elec3 * 60}, 34, 0)`;
+  document.getElementsByClassName("sp4")[0].style.backgroundColor = `rgba(${130 / distance_elec4 * 60}, 34, 0)`;
+  document.getElementsByClassName("sp1")[0].style.backgroundColor = `rgba(${130 / distance_elec1 * 60}, 34, 0)`;
 
-  console.log(distance_elec1)
- 
-  let new_value1 = `${10 * (min_distance / distance_elec1)}s`
-  let new_value2 = `${10 * (min_distance / distance_elec2)}s`
-  let new_value3 = `${10 * (min_distance / distance_elec3)}s`
-  let new_value4 = `${10 * (min_distance / distance_elec4)}s`
- 
-  document.getElementsByClassName("sp1")[0].style.animationDuration = new_value1
-  document.getElementsByClassName("sp2")[0].style.animationDuration = new_value2
-  document.getElementsByClassName("sp3")[0].style.animationDuration = new_value3
-  document.getElementsByClassName("sp4")[0].style.animationDuration = new_value4
+  let min1 = distance_elec1 < distance_elec2 ? distance_elec1 : distance_elec2;
+  let min2 = distance_elec3 < distance_elec4 ? distance_elec3 : distance_elec4;
+
+  let min_distance = min1 < min2 ? min1 : min2;
+  console.log(min_distance)
+
+  document.getElementsByClassName("prot")[0].style.backgroundColor = `rgba(${130 / min_distance * 60}, ${130 / min_distance * 60}, 0)`;
 }
 
-setInterval(action, 1000);
+setInterval(action, 100);
