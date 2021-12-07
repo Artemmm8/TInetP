@@ -1,3 +1,28 @@
+h1 {
+    color: yellow;
+    font-size: 36px;
+    line-height: 31px;
+	text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+	text-align: center;
+}
+
+header {
+	background-color: #20B2AA;
+}
+
+header nav {
+	justify-content: center;
+}
+
+header nav a {
+    margin: 0px 50px;
+    justify-content: center;
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+	text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
+
 body {
     background-color: #AFEEEE;
 }
@@ -84,79 +109,95 @@ body {
   }
   5% {
     animation-timing-function: linear;
-    transform: translateX(1px) translateY(-20px);
+    transform: translateX(1px) translateY(-22px);
   }
   10% {
     animation-timing-function: linear;
-    transform: translateX(4px) translateY(-40px);
+    transform: translateX(4px) translateY(-42px);
   }
   15% {
     animation-timing-function: linear;
-    transform: translateX(9px) translateY(-61px);
+    transform: translateX(9px) translateY(-62px);
   }
   20% {
     animation-timing-function: linear;
-    transform: translateX(16px) translateY(-81px);
+    transform: translateX(18px) translateY(-82px);
+  }
+  23% {
+    animation-timing-function: linear;
+    transform: translateX(25px) translateY(-94px);
   }
   25% {
     animation-timing-function: linear;
-    transform: translateX(38px) translateY(-102px);
+    transform: translateX(42px) translateY(-102px);
+  }
+  27% {
+    animation-timing-function: linear;
+    transform: translateX(55px) translateY(-94px);
   }
   30% {
     animation-timing-function: linear;
-    transform: translateX(61px) translateY(-81px);
+    transform: translateX(63px) translateY(-82px);
   }
   35% {
     animation-timing-function: linear;
-    transform: translateX(68px) translateY(-61px);
+    transform: translateX(69px) translateY(-62px);
   }
   40% {
     animation-timing-function: linear;
-    transform: translateX(72px) translateY(-40px);
+    transform: translateX(74px) translateY(-42px);
   }
   45% {
     animation-timing-function: linear;
-    transform: translateX(75px) translateY(-20px);
+    transform: translateX(77px) translateY(-22px);
   }
   50% {
     animation-timing-function: linear;
-    transform: translateX(76px) translateY(0px);
+    transform: translateX(78px) translateY(0px);
   }
   55% {
     animation-timing-function: linear;
-    transform: translateX(75px) translateY(20px);
+    transform: translateX(77px) translateY(22px);
   }
   60% {
     animation-timing-function: linear;
-    transform: translateX(72px) translateY(40px);
+    transform: translateX(74px) translateY(42px);
   }
   65% {
     animation-timing-function: linear;
-    transform: translateX(68px) translateY(61px);
+    transform: translateX(69px) translateY(62px);
   }
   70% {
     animation-timing-function: linear;
-    transform: translateX(61px) translateY(81px);
+    transform: translateX(63px) translateY(82px);
+  }
+  73% {
+    animation-timing-function: linear;
+    transform: translateX(55px) translateY(94px);
   }
   75% {
     animation-timing-function: linear;
-    transform: translateX(38px) translateY(102px);
+    transform: translateX(42px) translateY(102px);
+  }
+  77% {
+    animation-timing-function: linear;
+    transform: translateX(25px) translateY(94px);
   }
   80% {
     animation-timing-function: linear;
-    transform: translateX(16px) translateY(81px);
+    transform: translateX(18px) translateY(82px);
   }
   85% {
     animation-timing-function: linear;
-    transform: translateX(9px) translateY(61px);
+    transform: translateX(9px) translateY(62px);
   }
   90% {
     animation-timing-function: linear;
-    transform: translateX(4px) translateY(40px);
+    transform: translateX(4px) translateY(42px);
   }
   95% {
     animation-timing-function: linear;
-    transform: translateX(1px) translateY(20px);
+    transform: translateX(1px) translateY(22px);
   }
   100% {
     animation-timing-function: linear;
