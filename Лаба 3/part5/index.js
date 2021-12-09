@@ -13,39 +13,58 @@ function getDistanceBetweenElements(a, b) {
  return Math.hypot(aPosition.x - bPosition.x, aPosition.y - bPosition.y);  
 }
 
+const getColorComponent = (distance) =>
+  130 / distance * 60;
+
+const setElectronsProps = () => {
+  for (let electronElement of electronsMap.keys()) {
+    electronElement.style.animationDuration =
+      `${1 / electronsMap.get(electronElement).speed}s`
+  }
+}
+
+let electronsMap = new Map();
+let protonElement = document.getElementsByClassName("prot")[0];
+
+function init() {
+  let electron1Element = document.getElementsByClassName("sp1")[0];
+  let electron2Element = document.getElementsByClassName("sp2")[0];
+  let electron3Element = document.getElementsByClassName("sp3")[0];
+  let electron4Element = document.getElementsByClassName("sp4")[0];
+
+  let electron1Instance = new Electron(0.1);
+  let electron2Instance = new Electron(0.05);
+  let electron3Instance = new Electron(0.025);
+  let electron4Instance = new Electron(0.0125);
+
+  electronsMap
+    .set(electron1Element, electron1Instance)
+    .set(electron2Element, electron2Instance)
+    .set(electron3Element, electron3Instance)
+    .set(electron4Element, electron4Instance)
+
+    setElectronsProps();
+}
+
+init();
+
 function action() {
-  let distance_elec1 = getDistanceBetweenElements(
-    document.getElementsByClassName("prot")[0],
-    document.getElementsByClassName("sp1")[0]
-  );
+  let minDistance = Number.MAX_SAFE_INTEGER;
 
-  let distance_elec2 = getDistanceBetweenElements(
-    document.getElementsByClassName("prot")[0],
-    document.getElementsByClassName("sp2")[0]
-  );
+  for (const electronElement of electronsMap.keys()) {
+    let distance = 
+      getDistanceBetweenElements(electronElement, protonElement);
 
-  let distance_elec3 = getDistanceBetweenElements(
-    document.getElementsByClassName("prot")[0],
-    document.getElementsByClassName("sp3")[0]
-  );
+    electronElement.style.backgroundColor = 
+      `rgba(${getColorComponent(distance)}, 34, 0)`;
 
-  let distance_elec4 = getDistanceBetweenElements(
-    document.getElementsByClassName("prot")[0],
-    document.getElementsByClassName("sp4")[0]
-  );
- 
-  document.getElementsByClassName("sp2")[0].style.backgroundColor = `rgba(${130 / distance_elec2 * 60}, 34, 0)`;
-  document.getElementsByClassName("sp3")[0].style.backgroundColor = `rgba(${130 / distance_elec3 * 60}, 34, 0)`;
-  document.getElementsByClassName("sp4")[0].style.backgroundColor = `rgba(${130 / distance_elec4 * 60}, 34, 0)`;
-  document.getElementsByClassName("sp1")[0].style.backgroundColor = `rgba(${130 / distance_elec1 * 60}, 34, 0)`;
+    if (distance < minDistance) {
+      minDistance = distance;
+    }
+  }
 
-  let min1 = distance_elec1 < distance_elec2 ? distance_elec1 : distance_elec2;
-  let min2 = distance_elec3 < distance_elec4 ? distance_elec3 : distance_elec4;
-
-  let min_distance = min1 < min2 ? min1 : min2;
-  console.log(min_distance)
-
-  document.getElementsByClassName("prot")[0].style.backgroundColor = `rgba(${130 / min_distance * 60}, ${130 / min_distance * 60}, 0)`;
+  protonElement.style.backgroundColor =
+    `rgba(${getColorComponent(minDistance)}, ${getColorComponent(minDistance)}, 0)`;
 }
 
 setInterval(action, 100);

@@ -1,7 +1,7 @@
 h1 {
-    color: yellow;
-    font-size: 36px;
-    line-height: 31px;
+  color: yellow;
+  font-size: 36px;
+  line-height: 31px;
 	text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
 	text-align: center;
 }
@@ -15,8 +15,8 @@ header nav {
 }
 
 header nav a {
-    margin: 0px 50px;
-    justify-content: center;
+  margin: 0px 50px;
+  justify-content: center;
 	text-decoration: none;
 	color: white;
 	font-size: 20px;
@@ -24,7 +24,7 @@ header nav a {
 }
 
 body {
-    background-color: #AFEEEE;
+  background-color: #AFEEEE;
 }
 
 .orbit {
@@ -80,25 +80,21 @@ body {
 
 .sp1 {
   animation-name: moving;
-  animation-duration:  10s;
   animation-iteration-count: infinite;
 }
 
 .sp2 {
   animation-name: moving;
-  animation-duration:  20s;
   animation-iteration-count: infinite;
 }
 
 .sp3 {
   animation-name: moving;
-  animation-duration:  30s;
   animation-iteration-count: infinite;
 }
 
 .sp4 {
   animation-name: moving;
-  animation-duration:  40s;
   animation-iteration-count: infinite;
 }
 
@@ -204,5 +200,3 @@ body {
     transform: translateX(0px) translateY(0px);
   }
 }
-  
-  
