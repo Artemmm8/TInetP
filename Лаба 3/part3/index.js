@@ -22,7 +22,13 @@ function handleTask_3_3_1() {
     const inc_m4 = 1.00 * ob_frm.m4.value;
     const inc_m5 = 1.00 * ob_frm.m5.value;
     const inc_m6 = 1.00 * ob_frm.m6.value;
-    const inc_mean = (inc_m1 + inc_m2 + inc_m3 + inc_m4 + inc_m5 + inc_m6) / 6;
+    const inc_m7 = 1.00 * ob_frm.m7.value;
+    const inc_m8 = 1.00 * ob_frm.m8.value;
+    const inc_m9 = 1.00 * ob_frm.m9.value;
+    const inc_m10 = 1.00 * ob_frm.m10.value;
+    const inc_m11 = 1.00 * ob_frm.m11.value;
+    const inc_m12 = 1.00 * ob_frm.m12.value;
+    const inc_mean = (inc_m1 + inc_m2 + inc_m3 + inc_m4 + inc_m5 + inc_m6 + inc_m7 + inc_m8 + inc_m9 + inc_m10 + inc_m11 + inc_m12) / 12;
     ob_frm.result.value = inc_mean;
   }
   
