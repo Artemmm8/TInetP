@@ -83,12 +83,12 @@ function setup() {
     
     window.onbeforeunload = onBeforeUnload;
 
-    const [convertCelsFahButton] = document.getElementsByClassName("convertCelsFahButton");
-    const [convertFahCelsButton] = document.getElementsByClassName("convertFahCelsButton");
-    const [convertCelsRumButton] = document.getElementsByClassName("convertCelsRumButton");
-    const [convertRumCelsButton] = document.getElementsByClassName("convertRumCelsButton");
-    const [convertFahRumButton] = document.getElementsByClassName("convertFahRumButton");
-    const [convertRumFahButton] = document.getElementsByClassName("convertRumFahButton");
+    const convertCelsFahButton = document.getElementsByClassName("convertCelsFahButton")[0];
+    const convertFahCelsButton = document.getElementsByClassName("convertFahCelsButton")[0];
+    const convertCelsRumButton = document.getElementsByClassName("convertCelsRumButton")[0];
+    const convertRumCelsButton = document.getElementsByClassName("convertRumCelsButton")[0];
+    const convertFahRumButton = document.getElementsByClassName("convertFahRumButton")[0];
+    const convertRumFahButton = document.getElementsByClassName("convertRumFahButton")[0];
 
     convertCelsFahButton.ondblclick = () => {
         handleCelsFahConvert();

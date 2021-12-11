@@ -14,7 +14,7 @@ function getDistanceBetweenElements(a, b) {
 }
 
 const getColorComponent = (distance) =>
-  130 / distance * 60;
+  -5.1 * distance + 510;
 
 const setElectronsProps = () => {
   for (let electronElement of electronsMap.keys()) {
@@ -22,6 +22,46 @@ const setElectronsProps = () => {
       `${1 / electronsMap.get(electronElement).speed}s`
   }
 }
+
+const a = 50;
+const b = 100;
+
+function calculateY(x, i) {
+  return (b * Math.sqrt(1 - ((x - a) * (x - a) / a / a)) * (i >= 50 ? 1 : -1))
+}
+
+function initMovingKeyframes() {
+  let styleSheet = document.styleSheets[0];
+  let keyframes = "@keyframes moving {";
+
+  let x = 0;
+  let y = 0;
+
+  const step = a / 25;
+
+  let sign = 1;
+
+  for (let i = 0; i <= 100; i++) {
+    console.log(x, y)
+    let animationState = 
+      `${i}% { animation-timing-function: linear; transform: translateX(${x}px) translateY(${y}px) }`
+
+    keyframes += animationState;
+
+    if (i == 50) {
+      sign *= -1;
+    }
+    x += step * sign;
+    y = calculateY(x, i);
+    
+  }
+
+  keyframes += "}"
+
+  styleSheet.insertRule(keyframes, styleSheet.length);
+}
+
+initMovingKeyframes();
 
 let electronsMap = new Map();
 let protonElement = document.getElementsByClassName("prot")[0];
@@ -56,7 +96,7 @@ function action() {
       getDistanceBetweenElements(electronElement, protonElement);
 
     electronElement.style.backgroundColor = 
-      `rgba(${getColorComponent(distance)}, 34, 0)`;
+      `rgba(${getColorComponent(distance)}, 0, 0)`;
 
     if (distance < minDistance) {
       minDistance = distance;

@@ -1,7 +1,7 @@
 h1 {
-  color: yellow;
   font-size: 36px;
   line-height: 31px;
+  color: yellow;
 	text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
 	text-align: center;
 }
@@ -30,8 +30,8 @@ body {
 .orbit {
   position: absolute;
   z-index: 10;
-  width: 75px;
-  height: 200px;
+  width: 97px;
+  height: 198px;
   left: 50%;
   top: 50%;
   margin: -100px -50px;
@@ -57,9 +57,9 @@ body {
 
 .prot {
   position: relative;
-  width: 16px;
-  height: 16px;
-  margin: 93px 29px;
+  width: 32px;
+  height: 32px;
+  margin: 85px 35px;
   border-radius: 50%;
   background-color: rgba(59, 32, 0, 0.7);
 }
@@ -74,8 +74,8 @@ body {
 .elec:after {
   content: '';
   display: block;
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 .sp1 {
@@ -98,7 +98,7 @@ body {
   animation-iteration-count: infinite;
 }
 
-@keyframes moving {
+/* @keyframes moving {
   0% {
     animation-timing-function: linear;
     transform: translateX(0px) translateY(0px);
@@ -199,4 +199,4 @@ body {
     animation-timing-function: linear;
     transform: translateX(0px) translateY(0px);
   }
-}
+} */

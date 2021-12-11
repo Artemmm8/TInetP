@@ -5,14 +5,14 @@ function handleTask_3_3_1() {
   }
   
   function handleTask_3_3_2() {
-    const dateVar = new Date();
-    const day_per_ms = 1000 * 60 * 60 * 24;
-    const seven_day_per_ms = 7 * day_per_ms;
-    let today_ms = dateVar.getTime();
-    today_ms += seven_day_per_ms;
-    dateVar.setTime(today_ms);
-    const seven_day = dateVar.toLocaleString([], { year: 'numeric', month: 'long', day: 'numeric' });
-    alert(`Дата через неделю от текущей даты: ${seven_day}`);
+    const date = new Date();
+    const milliseconds = 24 * 60 * 60 * 1000;
+    const weekMilliSeconds = 7 * milliseconds;
+    let millesesondsToToday = date.getTime();
+    millesesondsToToday += weekMilliSeconds;
+    date.setTime(millesesondsToToday);
+    const resultDate = date.toLocaleString([], { year: "numeric", month: "long", day: "numeric" });
+    alert(`Дата через неделю от текущей даты: ${resultDate}`);
   }
   
   function income(ob_frm) {
@@ -36,7 +36,7 @@ function handleTask_3_3_1() {
     const d = document;
     const a = d.forms.form2.num.value;
     let s;
-    let r = '  ';
+    let r = "  ";
     if (((d.forms.form2.elements.list1)[0]).selected) {
       r += ((d.forms.form2.elements[0])[0]).text;
       s = a * a * 3.14;
@@ -70,8 +70,8 @@ function handleTask_3_3_1() {
   }
   
   function minAndMaxIncome(formElements) {
-    const monthsNames = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август',
-      'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+    const monthsNames = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август",
+      "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
     const monthsIncomes = [];
   
     for (let i = 1; i <= 12; i++) {
@@ -89,37 +89,36 @@ function handleTask_3_3_1() {
       (index) => monthsNames[index],
     );
   
-    formElements['min-result'].value = `${minIncome} (${minIncomeMonths.join(', ')})`;
-    formElements['max-result'].value = `${maxIncome} (${maxIncomeMonths.join(', ')})`;
+    formElements["min-result"].value = `${minIncome} (${minIncomeMonths.join(", ")})`;
+    formElements["max-result"].value = `${maxIncome} (${maxIncomeMonths.join(", ")})`;
   }
   
-  function setup() {
-    const [button_task_3_3_1] = document.getElementsByClassName('button_task_3_3_1');
-    button_task_3_3_1.onclick = () => {
+  function init() {
+    const btn_task_3_3_1 = document.getElementById("btn-task-3-3-1");
+    btn_task_3_3_1.onclick = () => {
       handleTask_3_3_1();
     };
   
-    const [button_task_3_3_2] = document.getElementsByClassName('button_task_3_3_2');
-    button_task_3_3_2.onclick = () => {
+    const btn_task_3_3_2 = document.getElementById("btn-task-3-3-2");
+    btn_task_3_3_2.onclick = () => {
       handleTask_3_3_2();
     };
   
-    const [calculateIncomeButton] = document.getElementsByClassName('calculateIncomeButton');
-    calculateIncomeButton.onclick = () => {
+    const btn_task_3_3_3 = document.getElementById("btn-task-3-3-3");
+    btn_task_3_3_3.onclick = () => {
       const form = document.forms.form1;
       income(form.elements);
     };
   
-    const [calculateSquareButton] = document.getElementsByClassName('calculateSquareButton');
-    calculateSquareButton.onclick = () => {
+    const btn_task_3_4_1 = document.getElementById("btn-task-3-4-1");
+    btn_task_3_4_1.onclick = () => {
       testsel();
     };
   
-    const [calculateMinAndMaxIncomeButton] = document.getElementsByClassName('calculateMinAndMaxIncomeButton');
-    calculateMinAndMaxIncomeButton.onclick = () => {
+    const btn_task_3_4_2 = document.getElementById("btn-task-3-4-2");
+    btn_task_3_4_2.onclick = () => {
       const form = document.forms.form3;
       minAndMaxIncome(form.elements);
     };
   }
-  setup();
-  
+  init();
