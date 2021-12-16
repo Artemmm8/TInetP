@@ -81,14 +81,14 @@ function init() {
     .set(electron1Element, electron1Instance)
     .set(electron2Element, electron2Instance)
     .set(electron3Element, electron3Instance)
-    .set(electron4Element, electron4Instance)
+    .set(electron4Element, electron4Instance);
 
     setElectronsProps();
 }
 
 init();
 
-function action() {
+function colorChange() {
   let minDistance = Number.MAX_SAFE_INTEGER;
 
   for (const electronElement of electronsMap.keys()) {
@@ -107,4 +107,4 @@ function action() {
     `rgba(${getColorComponent(minDistance)}, ${getColorComponent(minDistance)}, 0)`;
 }
 
-setInterval(action, 100);
+setInterval(colorChange, 100);

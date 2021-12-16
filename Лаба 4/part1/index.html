@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./styles.css">
+    <title>Фреймы-слайды</title>
+    <script language="Javascript">
+        let defSize = 25;
+        function display(f) {
+            let newRows = "";
+            // Определение местоположения первого фрейма в коллекции all
+            let elFrame = document.getElementsByTagName("frame");
+            for (let intFrames = 0; intFrames < frames.length;
+                intFrames++) {
+                let curF = frames[intFrames].document;
+                if (curF.body == f.document.body) {
+                    // Предоставление всего пространства выделенному фрейму
+                    newRows += "*, ";
+                    /* Увеличение заголовка */
+                    curF.all.header.style.fontSize = "200%";
+                    curF.all.header.style.lineHeight = "150%";
+                    /* Включение полос прокрутки в активном фрейме
+                         путём доступа к элементу FRAME.  */
+                    elFrame[intFrames].scrolling = "yes";
+                }
+                else {
+                    // Установка размера по умолчанию
+                    newRows += defSize.toString() + ", ";
+                    // Сброс изменений размера и шрифта заголовка
+                    curF.all.header.style.fontSize = "";
+                    curF.all.header.style.lineHeight = "";
+                    // Отключение прокручивания
+                    document.all[intFrames].scrolling = "no"
+                }
+            }
+            document.body.rows = newRows;
+        }
+    </script>
+</head>
+
+<frameset rows="*, 25, 25">
+    <frame src="./framePages/filters.html" noresize />
+    <frame src="./framePages/binding.html" noresize scrolling="No" />
+    <frame src="./framePages/stylesAndPostion.html" noresize scrolling="No" />
+    <frame src="./framePages/events.html" noresize scrolling="No" />
+    <frame src="./framePages/framesControl.html" noresize scrolling="No" />
+</frameset>
+
+</html>

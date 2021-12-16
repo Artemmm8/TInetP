@@ -10,38 +10,38 @@ let data = [
     {
         lang: "fr",
         words: ["étoile", "argent", "matin", "ami", "petit déjeuner", "bien", "amour", "merci", "bonjour", "vie"]
+    },
+    {
+        lang: "rus",
+        words: ["звезда", "деньги", "утро", "друг", "завтрак", "хорошо", "любовь", "спасибо", "привет", "жизнь"]
     }
 ]
 
-var engWords =
-    ["star", "money", "morning", "friend", "breakfast", "well", "love", "thanks", "hello", "life"];
+let div = document.getElementById("div");
 
-var rusWords =
-    ["звезда", "деньги", "утро", "друг", "завтрак", "хорошо", "любовь", "спасибо", "привет", "жизнь"];
+let table1 = document.createElement("table");
+let thead1 = document.createElement("thead");
+let tbody1 = document.createElement("tbody");
 
-var belWords =
-    ["зорка", "грошы", "раніца", "сябар", "сняданак", "добра", "каханне", "дзякуй", "прывітанне", "жыццё"];
-
-var frWords =
-    ["étoile", "argent", "matin", "ami", "petit déjeuner", "bien", "amour", "merci", "bonjour", "vie"];
-
-var div = document.getElementById("div");
-
-var table1 = document.createElement("table");
-var thead1 = document.createElement("thead");
-var tbody1 = document.createElement("tbody");
-
-var table2 = document.createElement("table");
+let table2 = document.createElement("table");
 table2.id = "tttable";
 
 
-var row1 = document.createElement("tr");
-var heading1 = document.createElement("th");
+let row1 = document.createElement("tr");
+let heading1 = document.createElement("th");
 heading1.innerHTML = "Русское слово";
 
 row1.appendChild(heading1);
 thead1.appendChild(row1);
 table1.appendChild(thead1);
+
+let rusWords = []
+
+for (const item of data) {
+    if (item.lang == "rus") {
+        rusWords.push(...item.words)
+    }
+}
 
 fillWords(rusWords, tbody1);
 
@@ -53,9 +53,9 @@ div.appendChild(table2);
 document.getElementById("body").appendChild(div);
 
 function fillWords(words, tbody) {
-    for (var index = 0; index < words.length; index++) {
-        var row = document.createElement("tr");
-        var row_data1 = document.createElement("td");
+    for (let index = 0; index < words.length; index++) {
+        let row = document.createElement("tr");
+        let row_data1 = document.createElement("td");
         
         row_data1.innerHTML = words[index];
     
@@ -68,13 +68,13 @@ function drawTranslationTable() {
     let table12 = document.getElementById("tttable");
     document.getElementById("div").removeChild(table12);
 
-    var table2 = document.createElement("table");
+    let table2 = document.createElement("table");
     table2.id = "tttable";
-    var thead2 = document.createElement("thead");
-    var tbody2 = document.createElement("tbody");
+    let thead2 = document.createElement("thead");
+    let tbody2 = document.createElement("tbody");
 
-    var row2 = document.createElement("tr");
-    var heading2 = document.createElement("th");
+    let row2 = document.createElement("tr");
+    let heading2 = document.createElement("th");
     heading2.innerHTML = "Перевод";
 
     row2.appendChild(heading2);
@@ -82,8 +82,8 @@ function drawTranslationTable() {
     table2.appendChild(thead2);
 
     let lang;
-    var options = document.getElementsByName("dynamic");
-    for (var index = 0; index < options.length; index++) {
+    let options = document.getElementsByName("dynamic");
+    for (let index = 0; index < options.length; index++) {
         if (options[index].checked) {
             lang = options[index].value;
         }

@@ -1,0 +1,4 @@
+1#Samsung Galaxy S8#500#s8.txt
+2#Samsung Galaxy s10#600#s10.txt
+3#Samsung Galaxy S20#700#s20.txt
+4#Samsung Galaxy S21#800#s21.txt

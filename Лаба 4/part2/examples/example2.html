@@ -1,0 +1,21 @@
+<HTML>
+
+<HEAD>
+    <link rel="stylesheet" href="../styles.css">
+    <TITLE>Применение фильтров light() и invert()</TITLE>
+    <script>
+        function tstFilter1() {
+            ImageLogo1.filters.light.AddPoint
+                (55, 3, 1, 120, 300, 250, 250, 250, 20, 30);
+        }
+    </script>
+</HEAD>
+
+<BODY onLoad="tstFilter1()">
+    <H3>Применение фильтров light() и invert()</H3>
+    <!-- filter: light(); -->
+    <IMG ID=ImageLogo1 SRC="../../assets/img_3.jpg" style="filter: brightness(200%); ">
+    <IMG SRC="../../assets/img_3.jpg" style="filter:invert();">
+</BODY>
+
+</HTML>

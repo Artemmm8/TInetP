@@ -1,0 +1,51 @@
+body {
+    background-color: #e4dda1;
+    color: rgb(31, 163, 180);
+}
+
+header {
+	background-color: #20B2AA;
+}
+
+header nav {
+	justify-content: center;
+}
+
+header nav a {
+  margin: 0px 50px;
+  justify-content: center;
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+	text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
+
+.select {
+    text-align:center; font-weight: bold; cursor: hand
+}
+
+h1 {
+    font: var(--medium-font);
+    color: var(--black-color);
+    font-size: 16px;
+    line-height: 19px;
+}
+
+h2 {
+    font: var(--medium-font);
+    color: var(--black-color);
+    font-size: 21px;
+    line-height: 34px;
+    margin-bottom: 20px;
+}
+
+main {
+    padding: 5px 40px;
+}
+
+p {
+    font: var(--regular-font);
+    font-size: 14px;
+    margin-top: 20px;
+    line-height: 19px;
+}

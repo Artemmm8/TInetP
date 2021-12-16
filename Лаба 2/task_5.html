@@ -9,6 +9,25 @@
             font-size: 18px;
             background-color: white;
         }
+
+        .form-select {
+            height: 2.5rem;
+            width: 17rem;
+            margin-top: 0.8rem;
+            margin-right: 0.5rem;
+            border: solid #ced4da 1px;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-select:focus {
+            box-shadow: 0 0 5px #007bff;
+            outline: none;
+        }
+
+        .container {
+            width: 70rem;
+        }
     </style>
 </head>
 
@@ -24,15 +43,28 @@
 			<br>
         </p>
     </article>
-    <!-- <div>
-        <p><input id="radio1" type="radio" name="dynamic" value="bel" onclick="out()">Белорусский</p>
-        <p><input id="radio2" type="radio" name="dynamic" value="eng" onclick="out()">Английский</p>
-        <p><input id="radio3" type="radio" name="dynamic" value="fr" onclick="out()">Французский</p>
-    </div> -->
 
     <p align="right">
         <button class="button" onclick="task_3_1_action()"><span>Запустить</span></button>
     </p>
+    <hr>
+    <br>
+
+    <select id="esc-seq" class="form-select" onchange="change()">
+        <option value="1">\b</option>
+        <option value="2">\'</option>
+        <option value="3">\"</option>
+        <option value="4">\\</option>
+        <option value="5">\t</option>
+        <option value="6">\r</option>
+        <option value="7">\f</option>
+        <option value="8">\n</option>
+    </select>
+
+    <pre id="placeholder" class="container">
+         
+    </pre>
+
     <script>
         function task_3_1_action() {
 			var months_of_year = new Array("Ja\bnuary","\'F\february\'","Ma\rrch","April","May","June","Ju\tly","August","Sept\"ember","October","\\November\\","December");
@@ -42,6 +74,41 @@
 			"Summer: " + months_of_year[5] + " " + months_of_year[6] + " " + months_of_year[7] + "\n" +
 			"Autumn: " + months_of_year[8] + " " + months_of_year[9] + " " + months_of_year[10]);
         }
+
+        const map = new Map();
+        map
+        .set(1, '\b')
+        .set(2, '\'')
+        .set(3, '\"')
+        .set(4, '\\')
+        .set(5, '\t')
+        .set(6, '\r')
+        .set(7, '\f')
+        .set(8, '\n');
+
+        const change = () => {
+            let text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\n" + 
+                "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud\n" + 
+                "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor\n" + 
+                "in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur\n" + 
+                "sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+
+            let ddl = document.getElementById("esc-seq");
+            let placeholder = document.getElementById("placeholder");
+
+            let wordsArray = text.split(' ');
+
+            for (let i = 0; i < wordsArray.length; i++ ) {
+                if ((i + 1) % 7 == 0) {
+                    wordsArray[i] += map.get(parseInt(ddl.options[ddl.selectedIndex].value));
+                }
+            }
+            
+            placeholder.textContent = wordsArray.join(' '); 
+        }
+
+
+
 	</script>
     <script src="task5.js"></script>
 
