@@ -1,24 +1,11 @@
 function insert(num) {
-  var exp = document.form.textView.value;
   if (document.form.textView.value == "0") {
     document.form.textView.value = "";
   }
   
     document.form.textView.value = document.form.textView.value + num;
-  
 }
-function equal() {
-  var exp = document.form.textView.value;
-  if (exp) {
-    if (document.form.textView.value != eval(document.form.textView.value)) {
-      document.form.textView.value = eval(document.form.textView.value);
-      document.getElementById('last_value').innerHTML = exp + "=" + document.form.textView.value
-    }
-    else {
-      document.getElementById('last_value').innerHTML = document.form.textView.value
-    }
-  }
-}
+
 function c() {
   document.form.textView.value = "0";
 }
@@ -43,3 +30,93 @@ function backSpace() {
   document.form.textView.value = "0";
   }
 }
+
+const NUMBER_OR_DOT_REGEXP = /[0-9]|\./gi;
+
+function setup() {
+    const [result] = document.getElementsByClassName('input_txt');
+    const [dataToCalculateInput] = document.getElementsByClassName('input_txt');
+    const [calculateButton] = document.getElementsByClassName('equal');
+
+    function showAnError() {
+        result.value = 'Введены неверные данные';
+    }
+
+    calculateButton.onclick = () => {
+        const inputValue = dataToCalculateInput.value;
+        const safeDataToCalculate = inputValue.replace(/[^-()\d/*+%. ]/g, '');
+
+        if (inputValue.length != safeDataToCalculate.length) {
+            showAnError();
+            return;
+        }
+
+        const dataWithReplacedPrefixAndPostifixOperatorsArray = [];
+        let postfixExpression = '';
+
+        for (let i = 0; i < safeDataToCalculate.length; i++) {
+            if (safeDataToCalculate[i] === '+' || safeDataToCalculate[i] === '-') {
+                const operator = safeDataToCalculate[i] === '+' ? '+' : '-';
+
+                if (safeDataToCalculate[i + 1] === operator) {
+                    if (safeDataToCalculate[i - 1]?.search(NUMBER_OR_DOT_REGEXP) > -1) {
+
+                        let j = i - 1;
+                        let number = '';
+
+                        while (safeDataToCalculate[j]?.search(NUMBER_OR_DOT_REGEXP) > -1) {
+                            number = dataWithReplacedPrefixAndPostifixOperatorsArray.pop() + number;
+                            j--;
+                        }
+
+                        dataWithReplacedPrefixAndPostifixOperatorsArray.push(`(${number})`);
+                        postfixExpression += `${operator}1`;
+                        i += 1;
+                    } else {
+
+                        let j = i + 2;
+                        let number = '';
+
+                        while (safeDataToCalculate[j]?.search(NUMBER_OR_DOT_REGEXP) > -1) {
+                            number += safeDataToCalculate[j];
+                            j++;
+                        }
+
+                        dataWithReplacedPrefixAndPostifixOperatorsArray.push(`(${number}${operator}1)`);
+
+                        i += (number.length + 1);
+                    }
+                } else {
+                    dataWithReplacedPrefixAndPostifixOperatorsArray.push(safeDataToCalculate[i]);
+                }
+            } else {
+                dataWithReplacedPrefixAndPostifixOperatorsArray.push(safeDataToCalculate[i]);
+            }
+        }
+
+        dataWithReplacedPrefixAndPostifixOperatorsArray.push(postfixExpression);
+        const dataToCalculate = dataWithReplacedPrefixAndPostifixOperatorsArray.join('');
+
+        try {
+            const calculationResult = eval(dataToCalculate);
+
+            if (typeof calculationResult !== undefined
+                && calculationResult !== null
+                && !isNaN(parseInt(calculationResult))) {
+                result.value = calculationResult;
+                if (calculationResult == safeDataToCalculate) {
+                    document.getElementById("last_value").innerHTML = calculationResult
+                }
+                else
+                    {document.getElementById("last_value").innerHTML = safeDataToCalculate + "=" + calculationResult;}
+            } else {
+                showAnError();
+            }
+        } catch (err) {
+            console.error(err);
+            showAnError();
+        }
+    };
+}
+
+setup();

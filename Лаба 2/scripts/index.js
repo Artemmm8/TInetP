@@ -10,6 +10,10 @@ let data = [
     {
         lang: "fr",
         words: ["étoile", "argent", "matin", "ami", "petit déjeuner", "bien", "amour", "merci", "bonjour", "vie"]
+    },
+    {
+        lang: "rus",
+        words: ["звезда", "деньги", "утро", "друг", "завтрак", "хорошо", "любовь", "спасибо", "привет", "жизнь"]
     }
 ]
 
@@ -30,6 +34,14 @@ heading1.innerHTML = "Русское слово";
 row1.appendChild(heading1);
 thead1.appendChild(row1);
 table1.appendChild(thead1);
+
+let rusWords = []
+
+for (const item of data) {
+    if (item.lang == "rus") {
+        rusWords.push(...item.words)
+    }
+}
 
 fillWords(rusWords, tbody1);
 

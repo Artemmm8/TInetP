@@ -20,6 +20,7 @@ function setup() {
         }
 
         const dataWithReplacedPrefixAndPostifixOperatorsArray = [];
+        let postfixExpression = '';
 
         for (let i = 0; i < safeDataToCalculate.length; i++) {
             if (safeDataToCalculate[i] === '+' || safeDataToCalculate[i] === '-') {
@@ -37,7 +38,8 @@ function setup() {
                             j--;
                         }
 
-                        dataWithReplacedPrefixAndPostifixOperatorsArray.push(`(${number}${operator}1)`);
+                        dataWithReplacedPrefixAndPostifixOperatorsArray.push(`(${number})`);
+                        postfixExpression += `${operator}1`;
                         i += 1;
                     } else {
                         // prefix operator
@@ -62,6 +64,7 @@ function setup() {
             }
         }
 
+        dataWithReplacedPrefixAndPostifixOperatorsArray.push(postfixExpression);
         const dataToCalculate = dataWithReplacedPrefixAndPostifixOperatorsArray.join('');
 
         try {
@@ -71,6 +74,11 @@ function setup() {
                 && calculationResult !== null
                 && !isNaN(parseInt(calculationResult))) {
                 result.value = calculationResult;
+                if (calculationResult == safeDataToCalculate) {
+                    document.getElementById("last_value").innerHTML = calculationResult
+                }
+                else
+                    {document.getElementById("last_value").innerHTML = safeDataToCalculate + "=" + calculationResult;}
             } else {
                 showAnError();
             }

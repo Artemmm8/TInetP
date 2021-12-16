@@ -1,0 +1,45 @@
+<HTML>
+
+<HEAD>
+    <link rel="stylesheet" href="./styles.css">
+    <TITLE>Визуальные эффекты перехода revealtrans()</TITLE>
+    <script>
+        function light_logo(ii, duration)
+        //проявление картинки для данного типа перехода
+        {
+            ii = Number(ii);
+            ImageLogo.filters.revealtrans.Apply();
+            ImageLogo.filters.revealtrans.transition = ii;
+            ImageLogo.filters.revealtrans.duration = duration;
+            ImageLogo.style.visibility = "visible";
+            ImageLogo.filters.revealtrans.play();
+        }
+    </script>
+</HEAD>
+
+<BODY>
+    <header class="header">
+		<center>
+			<nav>
+				<a href="../part1/index.html">Задание 1</a>
+				<a href="../part2/index.html">Задание 2</a>
+				<a href="../part3/index.html">Задание 3</a>
+				<a href="../part4/index.html">Задание 4</a>
+				<a href="../part5/index.html">Задание 5</a>
+			</nav>
+		</center>
+	</header>
+    <H3>Эффекты перехода revealtrans().</H3>
+    <IMG ID=ImageLogo SRC="../assets/img_1.jpg" style="filter:revealtrans()" width="600" height="400"><br><br><br>
+    <form name="frm">
+        <label>
+            Введите тип: 0...23 <input name="trns" TYPE="text" value=15 size=3>
+        </label>
+        <label>
+            Введите продолжительность в секундах <input name="duration" TYPE="text" value=5 size=3>
+        </label>
+        <input type="button" value="<--- Применить" onClick='ImageLogo.style.visibility="hidden"; light_logo(frm.trns.value, frm.duration.value);'>        
+    </form>
+</BODY>
+
+</HTML>
