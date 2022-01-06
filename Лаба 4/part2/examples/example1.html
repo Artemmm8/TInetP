@@ -3,12 +3,40 @@
 <head>
     <link rel="stylesheet" href="../styles.css">
     <title>Применение фильтра flipv()</title>
+    <style>
+        .btns {
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
 </head>
 
 <body>
     <h3>Эффект применения фильтра flipv()</h3>
-    <img id=ImageLogo src="../../assets/img_4.jpg">
-    <img id=ImageLogo style="filter:flipv()" src="../../assets/img_4.jpg">
-</body>
+        <img id="img1" src="../../assets/img_4.jpg">
+        <img id="img2" style="filter:flipv()" src="../../assets/img_4.jpg">
 
+    <div class="btns">
+        <button id="protchas" onclick="protchasclick()">против часовой</button>
+        <button id="pochas" onclick="pochasclick()">по часовой</button>
+    </div>
+
+    <script>
+        let angle1 = 0;
+        let angle2 = 0;
+
+        let img1 = document.getElementById("img1");
+        let img2 = document.getElementById("img2");
+
+        function pochasclick() {
+            angle2 += 90;
+            img1.style.transform = `rotate(${angle2}deg)`;
+        }
+
+        function protchasclick() {
+            angle1 -= 90;
+            img2.style.transform = `rotate(${angle1}deg)`;
+        }
+    </script>
+</body>
 </html>
