@@ -26,7 +26,7 @@
                 h = h - 12;
                 ampm = "     PM";
             }
-            return parseInt(String(window.performance.now()).split('.')[1].slice(0,3));
+            return parseInt(String(window.performance.now()).split('.')[1].slice(0,6));
                 //parseInt(String(window.performance.now()).split('.')[1].slice(0,3));
         }
         function tick() {
